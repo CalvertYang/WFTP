@@ -159,7 +159,7 @@ namespace WFTP.Pages
                     int existFileCount = fileHash.Where(file => file.checksum == checksum).Count();
                     if (existFileCount > 0)
                     {
-                        MessageBox.Show(String.Format("檔案 {0} 已存在!!", System.IO.Path.GetFileName(localFilePath)));
+                        MessageBox.Show(String.Format("File {0} already exist!!", System.IO.Path.GetFileName(localFilePath)));
                         continue;
                     }
                     else

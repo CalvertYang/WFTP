@@ -105,7 +105,7 @@ namespace WFTP
             string[] pathList = navBar.GetDisplayPath().Split('\\');
             int level = pathList.Count();
             _ftpPath = "/";
-            if (!displayPath.Equals("分類"))
+            if (!displayPath.Equals("Category"))
             {
                 GetCatalogInfo(level, pathList.Last());
                 level++;
@@ -140,7 +140,7 @@ namespace WFTP
             XmlAttribute xmlns = _xdoc.CreateAttribute("xmlns");
             xmlns.Value = "";
             XmlAttribute t = _xdoc.CreateAttribute("title");
-            t.Value = "分類";
+            t.Value = "Category";
             root.Attributes.Append(xmlns);
             root.Attributes.Append(t);
             _xdoc.AppendChild(root);

@@ -98,13 +98,13 @@
             </ListView.View>
             
         </ListView>
-        <Label Content="欲上傳檔案" Margin="36,29,652,504" 
+        <Label Content="Wait For Upload" Margin="36,29,600,504" 
                Name="lbUpload" FontSize="16" 
                FontFamily="Microsoft JhengHei"
                FontWeight="Bold"
                Foreground="DarkGray" />
         <Label Name="lbTempRepo" 
-               Content="暫存檔案庫" Margin="37,278,651,255" FontSize="16" 
+               Content="Temp Pool" Margin="37,278,651,255" FontSize="16" 
                FontFamily="Microsoft JhengHei" Foreground="DarkGray" />
         <Label Content="" Margin="37,304,450,229"
                Name="lbPath" Foreground="DarkGray"

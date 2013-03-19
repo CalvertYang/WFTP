@@ -47,7 +47,7 @@
                 <GridViewColumn Header="FilePath" Width="60">
                     <GridViewColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="下載"
+                            <Button Content="Download"
                                     Tag="{Binding FileId}"
                                     FontSize="12"
                                     FontFamily="Microsoft JhengHei"
@@ -64,7 +64,7 @@
                 <GridViewColumn Header="FilePath" Width="60">
                     <GridViewColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="下載"
+                            <Button Content="Download"
                                     Tag="{Binding FilePath}"
                                     FontSize="12"
                                     FontFamily="Microsoft JhengHei"
@@ -87,7 +87,7 @@
 
             <XmlDataProvider x:Key="dataProvider" XPath="bc">
                 <x:XData>
-                    <bc xmlns="" title="分類" />
+                    <bc xmlns="" title="Category" />
                 </x:XData>
             </XmlDataProvider>
             <HierarchicalDataTemplate DataType="bc" ItemsSource="{Binding XPath=*}">
@@ -103,7 +103,7 @@
             <ColumnDefinition Width="*" />            
         </Grid.ColumnDefinitions>
         <TabControl Name="tabMain" Grid.Column="0" Grid.Row="0" Margin="0" HorizontalAlignment="Center">
-            <TabItem Header="一般查詢">
+            <TabItem Header="General">
                 <DockPanel Margin="5" Width="Auto">
                     <WrapPanel DockPanel.Dock="Top">
                         <Button Name="btnPrevLv"
@@ -159,7 +159,7 @@
                     </WrapPanel>
                 </DockPanel>
             </TabItem>
-            <TabItem Header="進階查詢">
+            <TabItem Header="Advanced">
                 <DockPanel Margin="5" >
                     <WrapPanel DockPanel.Dock="Top" Height="50">
                         <Grid Width="770" Name="grdSearch" Visibility="Hidden" >
@@ -176,7 +176,7 @@
                                 FontFamily="Microsoft JhengHei" 
                                 Margin="0,0,150,0" 
                                 Click="btnPrevPage_Click" />
-                            <TextBox Controls:TextboxHelper.Watermark="請輸入搜尋字串"  Grid.Column="1" Margin="20,0,0,0" Name="txtSearch" Height="30"/>
+                            <TextBox Controls:TextboxHelper.Watermark="Please input query condition"  Grid.Column="1" Margin="20,0,0,0" Name="txtSearch" Height="30"/>
                             <ComboBox Name="cmbSearchCompany" 
                                       Height="30" 
                                       Grid.Column="1"
@@ -190,9 +190,9 @@
                                       FontFamily="Microsoft JhengHei"
                                       ></ComboBox>
                             <WrapPanel Name="wpDate" Grid.Column="1" Width="Auto" Height="30" Visibility="Hidden">
-                                <Label Content="起"></Label>
+                                <Label Content="From"></Label>
                                 <DatePicker  Width="110" HorizontalAlignment="Left" Name="dtpSearchStart"  />
-                                <Label Content="迄"></Label>
+                                <Label Content="To"></Label>
                                 <DatePicker  Width="110" HorizontalAlignment="Left" Name="dtpSearchEnd"  />
                             </WrapPanel>
                             <ComboBox Name="cmbSearchClass"
@@ -201,9 +201,9 @@
                                       HorizontalAlignment="Left" SelectedIndex="0"
                                       FontFamily="Microsoft JhengHei"
                                       Margin="100,10,0,0" SelectionChanged="cmbSearchClass_SelectionChanged">
-                                <ComboBoxItem Content="檔名" FontFamily="Microsoft JhengHei"></ComboBoxItem>
-                                <ComboBoxItem Content="日期" FontFamily="Microsoft JhengHei"></ComboBoxItem>
-                                <ComboBoxItem Content="公司" FontFamily="Microsoft JhengHei"></ComboBoxItem>
+                                <ComboBoxItem Content="Filename" FontFamily="Microsoft JhengHei"></ComboBoxItem>
+                                <ComboBoxItem Content="Date" FontFamily="Microsoft JhengHei"></ComboBoxItem>
+                                <ComboBoxItem Content="Company" FontFamily="Microsoft JhengHei"></ComboBoxItem>
                             </ComboBox>
                             <Button Name="btnSearch" 
                                     Grid.Column="2" 

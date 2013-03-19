@@ -89,7 +89,7 @@ namespace WFTP.Pages
         {
             if (String.IsNullOrEmpty(txtID.Text.Trim()) || String.IsNullOrEmpty(txtPassword.Password))
             {
-                lblMessage.Content = "帳號或密碼不得為空";
+                lblMessage.Content = "Account or Password can't empty.帳號或密碼不得為空";
             }
             else
             {
@@ -141,7 +141,7 @@ namespace WFTP.Pages
                 }
                 else
                 {
-                    lblMessage.Content = "帳號或密碼有誤";
+                    lblMessage.Content = "Wrong Account or Password.";
                 }
             }
         }

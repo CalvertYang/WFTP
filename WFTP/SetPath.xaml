@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:odc="clr-namespace:Odyssey.Controls;assembly=Odyssey"
-        Title="設定分類" Height="150" Width="568" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        Title="Category Setting" Height="150" Width="568" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
         >
     <Window.Resources>
         <ResourceDictionary>
@@ -18,7 +18,7 @@
             </ResourceDictionary.MergedDictionaries>
             <XmlDataProvider x:Key="dataProvider" XPath="bc">
                 <x:XData>
-                    <bc xmlns="" title="分類" />
+                    <bc xmlns="" title="Category" />
                 </x:XData>
             </XmlDataProvider>
             <HierarchicalDataTemplate DataType="bc" ItemsSource="{Binding XPath=*}">

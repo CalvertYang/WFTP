@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         Name="MainWindow"
-        Title="工程資料庫系統"
+        Title="Engineering Database System"
         Height="600"
         Width="800"
         WindowStartupLocation="CenterScreen"
@@ -34,7 +34,7 @@
                             <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_page_search}" />
                         </Rectangle.Fill>
                     </Rectangle>
-                    <TextBlock Text="資料查詢" Foreground="White" Margin="5,0,0,0" FontWeight="Normal" FontSize="12" FontFamily="Microsoft JhengHei" />
+                    <TextBlock Text="Query" Foreground="White" Margin="5,0,0,0" FontWeight="Normal" FontSize="12" FontFamily="Microsoft JhengHei" />
                 </StackPanel>
             </Button>
             <!--Button #2 Manage-->
@@ -48,7 +48,7 @@
                             <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_edit}" />
                         </Rectangle.Fill>
                     </Rectangle>
-                    <TextBlock Text="管理資料" Foreground="White" Margin="5,0,0,0" FontWeight="Normal" FontSize="12" FontFamily="Microsoft JhengHei"/>
+                    <TextBlock Text="Manage" Foreground="White" Margin="5,0,0,0" FontWeight="Normal" FontSize="12" FontFamily="Microsoft JhengHei"/>
                 </StackPanel>
             </Button>
             <!--Button #3 Upload-->
@@ -62,7 +62,7 @@
                             <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_upload}" />
                         </Rectangle.Fill>
                     </Rectangle>
-                    <TextBlock Text="上傳資料" Foreground="White" Margin="5,0,0,0" FontWeight="Normal" FontSize="12" FontFamily="Microsoft JhengHei" />
+                    <TextBlock Text="Upload" Foreground="White" Margin="5,0,0,0" FontWeight="Normal" FontSize="12" FontFamily="Microsoft JhengHei" />
                 </StackPanel>
             </Button>
             <!--Button #3 Download process-->
@@ -76,7 +76,7 @@
                             <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_download}" />
                         </Rectangle.Fill>
                     </Rectangle>
-                    <TextBlock Text="處理進度" Foreground="White" Margin="5,0,0,0" FontWeight="Normal" FontSize="12" FontFamily="Microsoft JhengHei" />
+                    <TextBlock Text="Progress" Foreground="White" Margin="5,0,0,0" FontWeight="Normal" FontSize="12" FontFamily="Microsoft JhengHei" />
                 </StackPanel>
             </Button>
         </Controls:WindowCommands>

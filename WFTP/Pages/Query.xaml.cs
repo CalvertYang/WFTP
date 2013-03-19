@@ -374,7 +374,7 @@ namespace WFTP.Pages
             int level = pathList.Count();
             _ftpPath = "/";
             _idPath = "/";
-            if (!displayPath.Equals("分類"))
+            if (!displayPath.Equals("Category"))
             {
                 // 處理因為非同步目錄已不存在問題,如果找不到該層則往上一層找
                 level = GetCatalogInfo(level, pathList);
@@ -452,7 +452,7 @@ namespace WFTP.Pages
             string[] paths = navBar.Path.Split(new char[]{'\\'},StringSplitOptions.RemoveEmptyEntries);
             if (paths.Length == 1)
             {
-                navBar.Path = "分類";
+                navBar.Path = "Category";
                 lvwClassify.Tag = 1;
                 GetBreadcrumbBarPath();
             }
@@ -465,7 +465,7 @@ namespace WFTP.Pages
         }
         private void btnQueryHome_Click(object sender, RoutedEventArgs e)
         {
-            navBar.Path = "分類";
+            navBar.Path = "Category";
             lvwClassify.Tag = 1;
             GetBreadcrumbBarPath();
 
@@ -550,28 +550,28 @@ namespace WFTP.Pages
             {
                 // Add
                 MenuItem itemAdd = new MenuItem();
-                itemAdd.Header = "新增";
+                itemAdd.Header = "Add";
                 itemAdd.Click += rmenuAdd_Click;
                 Image imgAdd = new Image();
                 imgAdd.Source = new BitmapImage(new Uri("/WFTP;component/Images/icon_plus.png", UriKind.Relative));
                 itemAdd.Icon = imgAdd;
                 // Cancel
                 MenuItem itemCancel = new MenuItem();
-                itemCancel.Header = "取消選取";
+                itemCancel.Header = "Cancel Select";
                 itemCancel.Click += rmenuCancelSelected_Click;
                 Image imgCancel = new Image();
                 imgCancel.Source = new BitmapImage(new Uri("/WFTP;component/Images/icon_cancel.png", UriKind.Relative));
                 itemCancel.Icon = imgCancel;
                 // Edit
                 MenuItem itemEdit = new MenuItem();
-                itemEdit.Header = "編輯";
+                itemEdit.Header = "Edit";
                 itemEdit.Click += rmenuEdit_Click;
                 Image imgEdit = new Image();
                 imgEdit.Source = new BitmapImage(new Uri("/WFTP;component/Images/icon_edit.gif", UriKind.Relative));
                 itemEdit.Icon = imgEdit;
                 // Delete
                 MenuItem itemDelete = new MenuItem();
-                itemDelete.Header = "刪除";
+                itemDelete.Header = "Delete";
                 itemDelete.Click += rmenuDelete_Click;
                 Image imgDelete = new Image();
                 imgDelete.Source = new BitmapImage(new Uri("/WFTP;component/Images/icon_remove.png", UriKind.Relative));
@@ -690,7 +690,7 @@ namespace WFTP.Pages
             }
             switch (item.Content.ToString().Trim())
             {
-                case "公司":
+                case "Company":
                     var companys = GetCompanyList();
                     _dataCompanys.Clear();
                     foreach (var c in companys)
@@ -700,11 +700,11 @@ namespace WFTP.Pages
                     cmbSearchCompany.Visibility = System.Windows.Visibility.Visible;
                     break;
 
-                case "日期":
+                case "Date":
                     wpDate.Visibility = System.Windows.Visibility.Visible;
                     break;
 
-                case "檔名":
+                case "Filename":
                     txtSearch.Visibility = System.Windows.Visibility.Visible;
                     break;
 
@@ -725,7 +725,7 @@ namespace WFTP.Pages
             ComboBoxItem item = cmbSearchClass.SelectedItem as ComboBoxItem;
             switch (item.Content.ToString().Trim())
             {
-                case "公司":
+                case "Company":
                     if (cmbSearchCompany.Visibility == System.Windows.Visibility.Visible)
                     {
                         CompanyItem i = cmbSearchCompany.SelectedItem as CompanyItem;
@@ -733,7 +733,7 @@ namespace WFTP.Pages
                     }
                     break;
 
-                case "日期":
+                case "Date":
                     if (wpDate.Visibility == System.Windows.Visibility.Visible)
                     {
                         if (dtpSearchStart.SelectedDate > dtpSearchEnd.SelectedDate)
@@ -750,7 +750,7 @@ namespace WFTP.Pages
 
                     break;
 
-                case "檔名":
+                case "Filename":
                     if (txtSearch.Visibility == System.Windows.Visibility.Visible)
                     {
                         _searchConditions["FileName"] = txtSearch.Text.Trim();
@@ -875,7 +875,7 @@ namespace WFTP.Pages
             GlobalHelper.RefreshLogginUser();
             if (!GlobalHelper.AdminItem.IsAdmin || !GlobalHelper.AdminItem.Activity)
             {
-                MessageBox.Show("您的權限已被更改請重新登入。");
+                MessageBox.Show("Your authority has been changed, please login again.");
                 Switcher.main.btnManage.Visibility = Visibility.Hidden;
                 Switcher.main.btnProgress.Visibility = Visibility.Hidden;
                 Switcher.main.btnQuery.Visibility = Visibility.Hidden;
@@ -901,7 +901,7 @@ namespace WFTP.Pages
             XmlAttribute xmlns = _xdoc.CreateAttribute("xmlns");
             xmlns.Value = "";
             XmlAttribute t = _xdoc.CreateAttribute("title");
-            t.Value = "分類";
+            t.Value = "Category";
             root.Attributes.Append(xmlns);
             root.Attributes.Append(t);
             _xdoc.AppendChild(root);
@@ -1475,7 +1475,7 @@ namespace WFTP.Pages
             {
                 case 1:
                     id = Convert.ToInt32(ids[0]);
-                    if (System.Windows.MessageBox.Show("是否刪除?", "警告", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                    if (System.Windows.MessageBox.Show("Are you sure you want to delete?", "Warning", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                     {
                         try
                         {
@@ -1494,7 +1494,7 @@ namespace WFTP.Pages
                     break;
                 case 2:
                     id = Convert.ToInt32(ids[1]);
-                    if (System.Windows.MessageBox.Show("是否刪除?", "警告", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                    if (System.Windows.MessageBox.Show("Are you sure you want to delete?", "Warning", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                     {
                         try
                         {
@@ -1512,7 +1512,7 @@ namespace WFTP.Pages
                     break;
                 case 3:
                     id = Convert.ToInt32(ids[2]);
-                    if (System.Windows.MessageBox.Show("是否刪除?", "警告", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                    if (System.Windows.MessageBox.Show("Are you sure you want to delete?", "Warning", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                     {
                         try
                         {
@@ -1530,7 +1530,7 @@ namespace WFTP.Pages
                     break;
                 case 4:
                     id = Convert.ToInt32(ids[3]);
-                    if (System.Windows.MessageBox.Show("是否刪除?", "警告", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                    if (System.Windows.MessageBox.Show("Are you sure you want to delete?", "Warning", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                     {
                         try
                         {
@@ -1548,7 +1548,7 @@ namespace WFTP.Pages
                     break;
                 case 5:
                     id = Convert.ToInt32(ids[4]);
-                    if (System.Windows.MessageBox.Show("是否刪除?", "警告", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                    if (System.Windows.MessageBox.Show("Are you sure you want to delete?", "Warning", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                     {
                         try
                         {
@@ -1568,7 +1568,7 @@ namespace WFTP.Pages
                     break;
                 case 6:
                     id = Convert.ToInt32(ids[5]);
-                    if (System.Windows.MessageBox.Show("是否刪除?", "警告", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                    if (System.Windows.MessageBox.Show("Are you sure you want to delete?", "Warning", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                     {
                         try
                         {
@@ -1926,7 +1926,7 @@ namespace WFTP.Pages
             if (lvwAdvanceClassify.Items.Count == 0)
             {
                 lbMessage.Visibility = System.Windows.Visibility.Visible;
-                lbMessage.Content = "搜尋完成,無資料紀錄";
+                lbMessage.Content = "Search complete, no record found.";
             }
             else
             {
@@ -2058,7 +2058,7 @@ namespace WFTP.Pages
             _catalogLevelName[level+1] = name;
             if ((tmpLevel - level) > 0)
             {
-                MessageBox.Show("警告:該目錄已被刪除或不存在.");
+                MessageBox.Show("Error: This directory has been deleted or not exist.");
             }
             return level;
         }
